@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 27</title>
+</head>
+<style>
+    #wrapper {
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        background: #fff;
+        width: 275px;
+        margin: 0 auto;
+    }
+    .option {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    #resultado {
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <form method="post" action="http://localhost:8080/DWS/ejercicios/T2/ejercicio27b.php" align="center">
+        <div id="wrapper">
+            <div class="option">Número 1:</div><div class="option"><input type="number" name="num1"></input></div>
+            <div class="option">Número 2:</div><div class="option"><input type="number" name="num2"></input></div>
+            <div class="option"><input type="submit" value="Calcular" /></div>
+        </div>
+    </form>
+</body>
+</html>

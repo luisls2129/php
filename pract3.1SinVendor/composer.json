@@ -1,0 +1,12 @@
+{
+    "name": "26762403v/practica-entregable3.1",
+    "authors": [
+        {
+            "name": "Luis Lopez",
+            "email": "luisls2129@gmail.com"
+        }
+    ],
+    "require": {
+        "mtdowling/jmespath.php": "^2.6"
+    }
+}
