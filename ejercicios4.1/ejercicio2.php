@@ -23,4 +23,4 @@ class Empleado{
 }
  
 $empleado1 = new Empleado("Luis", 150);
-$empleado1 = new Empleado("Ruben", 500);
+$empleado2 = new Empleado("Ruben", 500);
