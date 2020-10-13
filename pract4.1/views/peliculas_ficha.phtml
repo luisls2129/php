@@ -3,6 +3,20 @@ $v->layout('main', ['title' => 'peliculas - Ficha']);
 echo "<b>Título: </b>" . $pelicula['titulo'] . "<br />";
 echo "<b>Año: </b>" . $pelicula['anyo'] . "<br />";
 echo "<b>Duracion: </b>" . $pelicula['duracion'] . "<br />";
+echo "<b>Directores:<br />";
 
-var_dump($v);
+foreach ($peliDirector as $variable) {
+   
+    echo '<a href="/DWS/php/pract4.1/director/' . $variable['id'] . '" class="custom-card">';
+    echo $variable['nombre'] . "<br>";
+    echo '</a>';
+}
+echo "<b>Actores:<br />";
+foreach ($peliActor as $variable) {
+    
+    echo '<a href="/DWS/php/pract4.1/actor/' . $variable['id'] . '" class="custom-card">';
+    echo $variable['nombre'] ."<br>";
+    echo '</a>';
+}
+
 ?>

@@ -1,9 +1,11 @@
 <?php
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-    $basedir = '/DWS/pract4.1';
+    $basedir = '/DWS/php/pract4.1';
     $r->addRoute('GET', $basedir . '/', 'main@index');
     $r->addRoute('GET', $basedir . '/peliculas', 'Pelicula@getAll');
     $r->addRoute('GET', $basedir . '/peliculas/{id:\d+}', 'Pelicula@getById');
+    $r->addRoute('GET', $basedir . '/actor/{id:\d+}', 'Actor@getById');
+    $r->addRoute('GET', $basedir . '/director/{id:\d+}', 'Director@getById');
 });
 // Fetch method and URI from somewhere
 $httpMethod = $_SERVER['REQUEST_METHOD'];
