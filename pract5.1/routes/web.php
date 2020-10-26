@@ -1,6 +1,6 @@
 <?php
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-    $basedir = '/DWS/pract4.1';
+    $basedir = '/DWS/pract5.1';
     $r->addRoute('GET', $basedir . '/', 'main@index');
     $r->addRoute('GET', $basedir . '/peliculas', 'Pelicula@getAll');
     $r->addRoute('GET', $basedir . '/peliculas/{id:\d+}', 'Pelicula@getById');
@@ -19,7 +19,7 @@ $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
         // ... 404 Not Found
-        $controllerName = '\\controllers\\Main';
+        $controllerName = '\\app\\controllers\\Main';
         $action = 'error';
         $controller = new $controllerName($templates);
         $controller->$action();
@@ -32,7 +32,7 @@ switch ($routeInfo[0]) {
         
         $handler = $routeInfo[1];
         $partes = explode('@', $handler);
-        $controllerName = '\\controllers\\' . ucfirst($partes[0]);
+        $controllerName = '\\app\\controllers\\' . ucfirst($partes[0]);
         $action = $partes[1];
         $controller = new $controllerName($templates);
         $vars = $routeInfo[2];

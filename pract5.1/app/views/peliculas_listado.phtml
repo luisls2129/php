@@ -1,0 +1,16 @@
+<?php
+    $v->layout('main', ['title' => 'Peliculas'])
+?>
+<div class="row mx-auto">
+    <?php
+    foreach ($peliculas as $pelicula) {
+        echo '<div class="col-3">';
+        echo '<a href="peliculas/' . $pelicula['id'] . '" class="custom-card">';
+        echo '<div class="card" style="width: 100%;">';
+        echo '<img class="card-img-top" src="./imgs/peliculas/' .
+            $pelicula['id'] . '.jpg">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title text-center font-weight-bold">' .
+            $pelicula['titulo'] . '</h5>';
+        echo '</div></div></a></div>';
+    }
