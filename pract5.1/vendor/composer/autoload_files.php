@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
+    '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
+    'a4a119a56e50fbb293281d9a48007e0e' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     'e471bf351add62873bc0289ccd6a937f' => $vendorDir . '/league/plates/src/Template/match.php',
     '152c98af9456eeb8f53697d6a7dfd689' => $vendorDir . '/league/plates/src/Extension/Data/data.php',
     'e20239a76b73b9912f51f0005956d1db' => $vendorDir . '/league/plates/src/Extension/Path/path.php',

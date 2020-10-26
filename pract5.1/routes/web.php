@@ -1,6 +1,6 @@
 <?php
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-    $basedir = '/DWS/pract5.1';
+    $basedir = parse_url($_ENV['APP_URL'],PHP_URL_PATH);
     $r->addRoute('GET', $basedir . '/', 'main@index');
     $r->addRoute('GET', $basedir . '/peliculas', 'Pelicula@getAll');
     $r->addRoute('GET', $basedir . '/peliculas/{id:\d+}', 'Pelicula@getById');

@@ -2,11 +2,14 @@
 
 namespace core;
 
-use function JmesPath\search;
+use function \JmesPath\search;
 
 class Model
 {
     protected $table;
+
+    protected $primaryKey;
+
     protected function getAll()
     {
         $result = include('./bbdd/' . $this->table);
