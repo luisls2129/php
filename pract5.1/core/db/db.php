@@ -8,10 +8,7 @@ private function execute($sql, $params) {
     $pdo = Connection::getInstance()::getPDO();
     $ps = $pdo->prepare($sql);
     $ps->execute($params);
-
-    var_dump($params);
     $result = $ps->fetchAll(\PDO::FETCH_ASSOC);
-    var_dump($result);
     return $result;
 }
 
@@ -34,10 +31,6 @@ private function select($tabla,  $campos = ["*"], $condiciones = NULL, $parametr
     }
 
     $sql = "SELECT " . $stringCampos . " FROM " . $tabla . $stringCondiciones;
-
-    echo $sql . "<br>";
-
-    var_dump($parametros);
 
     return $this->execute($sql,$parametros);
 

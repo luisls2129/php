@@ -40,6 +40,19 @@ class Model
         return Db::select($this->table,$campos,$where,$params)[0];
     }
 
+    protected function belongsToMany($t2, $tJ, $pk_tJ1, $pk_tJ2, $pk, $pk_t2){
+     
+        $sql ="SELECT a.id, a.nombre FROM $t2 a 
+            JOIN $tJ pa ON a.$pk_t2 = pa.$pk_tJ1
+            JOIN peliculas p ON p.id = pa.$pk_tJ1 AND p.id = $pk";
+        $params = [
+            ":id" => $pk
+        ];
+
+        Db::execute($sql,$params);
+        
+    }
+
     public static function __callStatic($name, $arguments)
     {
         return (new static)->$name(...$arguments);

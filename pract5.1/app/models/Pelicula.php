@@ -7,6 +7,12 @@ use core\Model;
 class Pelicula extends Model{
     protected $table = 'peliculas';
 
+    protected function sacarD($idPeli){
+
+        Model::belongsToMany();
+
+    }
+
     protected function sacarDiretores($idPeli){
         $arrayPeliDirector = [];
         $pelicula_director = include('bbdd/pelicula_director.php');
