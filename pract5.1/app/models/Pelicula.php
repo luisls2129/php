@@ -5,7 +5,7 @@ namespace app\models;
 use core\Model;
 
 class Pelicula extends Model{
-    protected $table = 'peliculas.php';
+    protected $table = 'peliculas';
 
     protected function sacarDiretores($idPeli){
         $arrayPeliDirector = [];
