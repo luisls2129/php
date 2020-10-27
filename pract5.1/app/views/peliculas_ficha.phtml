@@ -7,14 +7,14 @@ echo "<b>Directores:<br />";
 
 foreach ($peliDirector as $variable) {
    
-    echo '<a href="'+$_ENV['APP_URL']+'"/director/' . $variable['id'] . '" class="custom-card">';
+    echo '<a href="'.$_ENV['APP_URL'].'/director/' . $variable['id'] . '" class="custom-card">';
     echo $variable['nombre'] . "<br>";
     echo '</a>';
 }
 echo "<b>Actores:<br />";
 foreach ($peliActor as $variable) {
     
-    echo '<a href="'+$_ENV['APP_URL']+'"/actor/' . $variable['id'] . '" class="custom-card">';
+    echo '<a href="'.$_ENV['APP_URL'].'/actor/' . $variable['id'] . '" class="custom-card">';
     echo $variable['nombre'] ."<br>";
     echo '</a>';
 }

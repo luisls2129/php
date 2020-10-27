@@ -8,9 +8,15 @@ use app\models\Actor as modelActor;
 class Actor extends Controller
 {
 
-    function getById($vars)
+
+    function getAll()
     {
-        $actor = modelActor::getById($vars['id']);
+        $actores = modelActor::all();
+        echo $this->templates->render('actores', ['actores' => $actores]);
+    }
+
+    function getById($vars){
+        $actor = modelActor::find($vars['id']);
         echo $this->templates->render('actores_ficha', ['actor' => $actor]);
     }
     

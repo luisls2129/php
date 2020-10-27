@@ -8,9 +8,14 @@ use app\models\Director as modelDirector;
 class Director extends Controller
 {
 
-    function getById($vars)
+    function getAll()
     {
-        $director = modelDirector::getById($vars['id']);
+        $directores = modelDirector::all();
+        echo $this->templates->render('directores', ['directores' => $directores]);
+    }
+
+    function getById($vars){
+        $director = modelDirector::find($vars['id']);
         echo $this->templates->render('directores_ficha', ['director' => $director]);
     }
     
