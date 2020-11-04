@@ -6,6 +6,11 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', $basedir . '/peliculas/{id:\d+}', 'Pelicula@getById');
     $r->addRoute('GET', $basedir . '/actor/{id:\d+}', 'Actor@getById');
     $r->addRoute('GET', $basedir . '/director/{id:\d+}', 'Director@getById');
+    $r->addRoute('GET', $basedir . '/criticas', 'critica@getAll');
+    $r->addRoute('GET',$basedir . '/pelicula/{id:\d+}/criticas','pelicula@criticas');
+    $r->addRoute('GET', $basedir . '/criticas/{id:\d+}', 'critica@getById');
+    $r->addRoute('GET', $basedir . '/peliculas/{id:\d+}/criticas/insertar', 'critica@insertForm');
+    $r->addRoute('POST', $basedir . '/peliculas/{id:\d+}/criticas', 'critica@insert');
 });
 // Fetch method and URI from somewhere
 $httpMethod = $_SERVER['REQUEST_METHOD'];

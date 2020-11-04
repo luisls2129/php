@@ -24,5 +24,11 @@ class Pelicula extends Controller
          ['pelicula' => $pelicula ,'peliDirector' => $directores, 'peliActor' => $actores,'criticas' => $criticas]);
     }
     
+    function Criticas($vars){
+        $criticas = modelPelicula::getCriticas($vars['id']);
+        echo$this->templates->render('peliculas_criticas', [
+            'id_pelicula' => $vars['id'], 'criticas' => $criticas
+            ]);
+    }
 
 }

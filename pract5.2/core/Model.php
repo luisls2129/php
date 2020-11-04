@@ -45,13 +45,16 @@ class Model
         JOIN $this->table t1 ON t1.$this->primaryKey = t2.$fk_t2
         AND t1.$this->primaryKey = :id";
 
-        
-        
         $params = [
             ":id" => $pk
         ];
 
         return Db::execute($sql, $params);
+    }
+
+    protected function insert() {
+        $result = DB::insert($this->table, $_POST);
+        return$result; 
     }
 
     public static function __callStatic($name, $arguments)

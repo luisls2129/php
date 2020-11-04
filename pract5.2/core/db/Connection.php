@@ -12,7 +12,7 @@ public function __construct() {
         $this->pdo = new \PDO("mysql:host=localhost;dbname=cine","root","");// o root
 
         $this->pdo->exec("set names utf8");
-        $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        //$this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
     }catch(\PDOException $e){
         echo "error al entrar a la base de datos";

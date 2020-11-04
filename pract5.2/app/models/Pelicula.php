@@ -20,7 +20,7 @@ class Pelicula extends Model{
     }
 
     protected function getCriticas($idPeli){
-        return model::hasMany("criticas","id",$idPeli);
+        return model::hasMany("criticas","id_pelicula",$idPeli);
     }
 
 }
