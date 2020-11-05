@@ -57,6 +57,16 @@ class Model
         return$result; 
     }
 
+    protected function edit($pk) {
+        $result = DB::edit($this->table, $_POST, $this->primary_key, $pk);
+        return $result;
+    }
+        
+    protected function delete($pk){
+        $result = DB::delete($this->table,$pk);
+        return $result;
+    }
+
     public static function __callStatic($name, $arguments)
     {
         return (new static)->$name(...$arguments);

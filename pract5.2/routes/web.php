@@ -11,9 +11,21 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', $basedir . '/criticas/{id:\d+}', 'critica@getById');
     $r->addRoute('GET', $basedir . '/peliculas/{id:\d+}/criticas/insertar', 'critica@insertForm');
     $r->addRoute('POST', $basedir . '/peliculas/{id:\d+}/criticas', 'critica@insert');
+    $r->addRoute('GET', $basedir .'/peliculas/{id_pelicula:\d+}/criticas/editar/{id_critica:\d+}', 'critica@editForm');
+    $r->addRoute('PUT', $basedir .'/peliculas/{id_pelicula:\d+}/criticas/{id_critica:\d+}', 'critica@edit');
+    $r->addRoute('DELETE', $basedir .'/peliculas/{id_pelicula:\d+}/criticas/{id_critica:\d+}', 'critica@delete');
+
 });
 // Fetch method and URI from somewhere
-$httpMethod = $_SERVER['REQUEST_METHOD'];
+//$httpMethod = $_SERVER['REQUEST_METHOD'];
+
+$metodosPermitidos = ['GET', 'POST', 'PUT', 'DELETE'];
+$httpMethod = strtoupper($_POST['_method']??
+$_SERVER['REQUEST_METHOD']);
+if(!in_array($httpMethod, $metodosPermitidos)) {
+$httpMethod = 'GET';
+}
+
 $uri = $_SERVER['REQUEST_URI'];
 // Strip query string (?foo=bar) and decode URI
 if (false !== $pos = strpos($uri, '?')) {
