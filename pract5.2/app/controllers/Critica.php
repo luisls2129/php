@@ -36,8 +36,7 @@ class Critica extends Controller{
 
     public function edit($vars) {
         modelCritica::edit($vars['id_critica']);
-        header('Location: ' . $_ENV['APP_URL'] . '/pelicula/' .
-        $vars['id_pelicula'] . '/criticas');
+        header('Location: ' . $_ENV['APP_URL'] . '/pelicula/' . $vars['id_pelicula'] . '/criticas');
     }
 
     public function delete($vars) {

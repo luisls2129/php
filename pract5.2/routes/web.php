@@ -20,8 +20,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 //$httpMethod = $_SERVER['REQUEST_METHOD'];
 
 $metodosPermitidos = ['GET', 'POST', 'PUT', 'DELETE'];
-$httpMethod = strtoupper($_POST['_method']??
-$_SERVER['REQUEST_METHOD']);
+$httpMethod = strtoupper($_POST['_method']?? $_SERVER['REQUEST_METHOD']);
 if(!in_array($httpMethod, $metodosPermitidos)) {
 $httpMethod = 'GET';
 }

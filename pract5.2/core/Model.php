@@ -58,12 +58,12 @@ class Model
     }
 
     protected function edit($pk) {
-        $result = DB::edit($this->table, $_POST, $this->primary_key, $pk);
+        $result = DB::edit($this->table, $_POST, $this->primaryKey, $pk);
         return $result;
     }
         
     protected function delete($pk){
-        $result = DB::delete($this->table,$pk);
+        $result = DB::delete($this->table, $this->primaryKey, $pk);
         return $result;
     }
 

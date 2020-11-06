@@ -12,7 +12,6 @@ class Db
         $ps->execute($params);
 
         $result = $ps->fetchAll(\PDO::FETCH_ASSOC);
-        var_dump($result);
         return $result;
     }
 
@@ -74,11 +73,12 @@ class Db
         return $this->execute($sql, $params);
     }
 
-    protected function delete($table, $pk){
+    protected function delete($table, $pkName, $pkValue){
 
-        $where = "$pk = :id";
-        $params[":id"] = $pk;
-        $sql = "DELETE * FROM $table WHERE $where";
+        $where = "$pkName = :id";
+        $params[":id"] = $pkValue;
+        $sql = "DELETE FROM $table WHERE $where";
+        
         return $this->execute($sql,$params);
 
     }
