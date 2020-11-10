@@ -37,7 +37,7 @@ switch ($routeInfo[0]) {
         // ... 404 Not Found
         $controllerName = '\\app\\controllers\\Main';
         $action = 'error';
-        $controller = new $controllerName($templates);
+        $controller = new $controllerName();
         $controller->$action();
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
@@ -50,7 +50,7 @@ switch ($routeInfo[0]) {
         $partes = explode('@', $handler);
         $controllerName = '\\app\\controllers\\' . ucfirst($partes[0]);
         $action = $partes[1];
-        $controller = new $controllerName($templates);
+        $controller = new $controllerName();
         $vars = $routeInfo[2];
         $controller->$action($vars);
 

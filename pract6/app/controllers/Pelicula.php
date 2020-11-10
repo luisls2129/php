@@ -10,8 +10,18 @@ class Pelicula extends Controller
     function getAll()
     {
         $peliculas = modelPelicula::all();
-        echo $this->templates->render('peliculas_listado', ['peliculas' =>
-        $peliculas]);
+        foreach ($peliculas as $pelicula) {
+            $datos[] = [
+                "id" => $pelicula["id"],
+                "titulo" => $pelicula["titulo"],
+                "links"=> [
+                    "self"=> $_ENV['APP_URL'] . "/peliculas/" . $pelicula["id"]
+                ]
+            ];
+        }
+        
+
+        Controller::respuestaJson(false,"200",$datos);
     }
 
     function getById($vars)
@@ -20,8 +30,22 @@ class Pelicula extends Controller
         $directores = modelPelicula::getDirect($vars['id']);
         $actores = modelPelicula::getAct($vars['id']);
         $criticas = modelPelicula::getCriticas($vars['id']);
-        echo $this->templates->render('peliculas_ficha',
-         ['pelicula' => $pelicula ,'peliDirector' => $directores, 'peliActor' => $actores,'criticas' => $criticas]);
+        
+        $datPeli = [
+            "titulo" => $pelicula["titulo"],
+            "links"=> [
+                "self"=> $_ENV['APP_URL'] . "/peliculas/" . $pelicula["id"]
+            ]
+        ];
+    }
+
+    function getActores($actores){
+        
+        $datAct = [];
+        foreach ($actores as $actor) {
+            
+        }
+
     }
     
     function Criticas($vars){

@@ -8,10 +8,10 @@ class Main extends Controller
 {
 
     function index(){
-        echo $this->templates->render('index');
+        json_encode("index");
     }
     
     function error(){
-        echo $this->templates->render('error');
+        echo json_encode("Error");
     }
 }
