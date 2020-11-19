@@ -43,6 +43,7 @@ class Critica extends Controller{
     public function insert() {
         $dataPOST = \json_decode(file_get_contents("php://input"));
         $lastInsertId = modelCritica::insert($dataPOST);
+        $data = "";
         if ($lastInsertId !== 0) {
             $data = [
                 '_links' => [
