@@ -13,7 +13,7 @@ class Connection {
                 $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
             $this->pdo->exec("set names utf8");
             $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             header('HTTP/1.1 500 Internal server error');
             exit();
         }
